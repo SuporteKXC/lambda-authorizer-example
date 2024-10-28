@@ -1,0 +1,13 @@
+service: xxxx-authorizer
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  deploymentMethod: direct
+  stage: ${opt:stage, 'dev'}
+
+functions:
+  authorizer:
+    handler: authorizer.handler
+  
